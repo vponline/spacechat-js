@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="css/styles.css"/>
+		<link rel="icon" href="img/favicon.png" />
+		<title>SpaceChat</title>
+	</head>
+	<body>
+		<div id="particles-js">
+			
+		</div>
+		<div class="join-container">
+			<header class="join-header">
+				<h1>🛰️<br> SpaceChat</h1>
+			</header>
+			<main class="join-main">
+				<form action="chat.html">
+					<div class="form-control">
+						<label for="username">Username</label>
+						<input
+							class="username"
+							type="text"
+							name="username"
+							id="username"
+							required
+							spellcheck="false"
+							autocomplete="off"
+						/>
+					</div>
+					<div class="form-control">
+						<label for="room">Room</label>
+						<select name="room" id="room">
+							<option value="General">General</option>
+							<option value="News">News</option>
+							<option value="Weather">Weather</option>
+							<option value="Pets">Pets</option>
+							<option value="Sports">Sports</option>
+							<option value="Movies">Movies</option>
+						</select>
+					</div>
+					<button type="submit" class="btn">
+						<span class="join-btn">🛸</span><br>
+						Join Chat</button>
+				</form>
+			</main>
+		</div>
+		
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha256-+u54FaX9J+k40eAcg5K2YzICSQjrEYBI9gju5nE3HfY=" crossorigin="anonymous"></script>
+
+    <script>
+        particlesJS.load('particles-js', 'particles.json');
+    </script>
+
+	<script>
+		document.getElementById("username").focus();
+		document.addEventListener('invalid', (function () {
+  			return function (e) {
+   				e.preventDefault();
+    			document.getElementById("username").focus();
+  			};
+		})(), true);
+	</script>
+		
+</body>
+</html>

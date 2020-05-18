@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/favicon.png" />
+  <title>SpaceChat</title>
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>🛰️ SpaceChat</h1>
+      <a href="index.html" class="btn-chat">⏏️</a>
+    </header>
+    <main class="chat-main">
+      <div class="chat-sidebar">
+        <h3>🌌 Room:</h3>
+        <h2 id="room-name"></h2>
+        <h3>👨‍🚀 Users</h3>
+        <ul id="users"></ul>
+      </div>
+      <div class="chat-messages"></div>
+    </main>
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input
+          id="msg"
+          type="text"
+          placeholder="Enter Message"
+          required
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button class="btn-chat">📡</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.3/qs.min.js" integrity="sha256-lSPkSu/D04IeqWOhTgTf5tLzNFEc37oNE9ysGS9PdK4=" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.getElementById("msg").focus();
+    document.addEventListener('invalid', (function () {
+      return function (e) {
+        e.preventDefault();
+        document.getElementById("msg").focus();
+      };
+    })(), true);
+  </script>
+
+</body>
+</html>
