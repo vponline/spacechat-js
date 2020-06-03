@@ -48,7 +48,7 @@ chatForm.addEventListener('submit', (e) => {
 function outputMessage(message) {
     const div = document.createElement('div');
     div.classList.add('message');
-    div.innerHTML = `<p class="meta"><span class='username'>${message.username}</span> ~${message.id != undefined ? message.id : "bot" }<span> ${message.time}</span></p>
+    div.innerHTML = `<p class="meta"><span class='username'>${message.username}</span> ~${message.id != undefined ? message.id : "bot" }<span> ${new Date().toLocaleString()}</span></p>
         <p class="text">
             ${message.text}
         </p>`;
